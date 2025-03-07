@@ -12,6 +12,9 @@ api_key="【请填写DeepSeek APIKey】"
 #当前日期
 date_str=datetime.today().strftime('%Y年%m月%d日')
 
+#问题
+question="我想写一个奇幻的小说，故事主要在10亿年前，但是主人公因为DNA的关系，在现代带有一些记忆。"
+
 client = OpenAI(api_key=api_key, base_url="https://api.deepseek.com")
 
 with open(template_file, 'r', encoding='utf-8') as file:
@@ -146,8 +149,6 @@ def to_output(content,messages,pros):
     messages.append({"role": "assistant", "content": content})
     messages.append({"role": "user", "content": '请给出最终的输出，按MarkDown格式'})
 
-
-question="我想写一个奇幻的小说，故事主要在10亿年前，但是主人公因为DNA的关系，在现代带有一些记忆。"
 
 
 # Round 1
